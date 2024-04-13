@@ -7,6 +7,57 @@
   <title>Sign Up Form</title>
 </head>
 <body>
-  
+  <div class="container">
+    <div class="bg-img-container">
+      <img class="bg-image" src="images/rain-forest-background.avif" />
+      <div class="logo">
+        <img src="images/logo.png">
+        <p class="logo-text">ODIN</p>
+      </div>
+      <div class="image-credit">
+        Photo by <a target="_blank" href="https://unsplash.com/photos/green-leaf-plant-in-close-up-photography-25xggax4bSA">
+        Halie West</a> on <a target="_blank" href="https://unsplash.com/">Unsplash</a>
+      </div>
+    </div>
+    <div class="form-container">
+      <div class="form-header">
+        <p class="header-text">
+          This is not a real online service! You know you need
+          something like this in your life to help you realize
+          your deepest dreams.<br> Sign up now to get started.
+        </p>
+        <p class="bottom-header-text">You Know you want to.</p>
+      </div>
+      <div class="form-body">
+        <h2>Let's do this!</h2>
+        <form action="#">
+          <div class="form-left">
+            <label for="name">FIRST NAME</label>
+            <input type="text" name="first-name" id="first-name">
+
+            <label for="email">EMAIL</label>
+            <input type="email" name="email" id="email">
+
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" id="password">
+          </div>
+          <div class="form-right">
+            <label for="last-name">LAST NAME</label>
+            <input type="text" name="last-name" id="last-name">
+
+            <label for="phone-number">PHONE NUMBER</label>
+            <input type="text" name="phone-number" id="phone-number">
+
+            <label for="confirm-password">CONFIRM PASSWORD</label>
+            <input type="password" name="confirm-pw" id="confirm-pw">
+          </div>
+        </form>
+      </div>
+      <div class="form-footer">
+        <button type="submit">Create Account</button>
+        <p>Already have an account? <a href="#">Log in</a></p>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
