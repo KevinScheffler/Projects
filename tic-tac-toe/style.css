@@ -1,0 +1,86 @@
+:root {
+  font-family: "Comfortaa", sans-serif;
+  --verde-prim:rgb(0, 48, 73);
+  --verde-sec:rgb(10, 147, 150);
+  --verde-ter:rgb(148, 210, 189);
+  --amarillo:rgb(255, 183, 3);
+  --naranjo:rgb(247, 127, 0);
+  --rojo:rgb(214, 40, 40);
+}
+
+body {
+  min-height: 100vh;
+  background-image: linear-gradient(var(--verde-prim), var(--verde-sec), var(--verde-ter));
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  color: white;
+  font-size: 38px;
+}
+
+.players input {
+  padding: 5px;
+  border: none;
+  border-radius: 8px;
+  width: 150px;
+}
+
+#start-btn {
+  width: 150px;
+  height: 32px;
+  font-size: 14px;
+  margin-top: 20px;
+  background-color: #099396;
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 15px;
+  margin-top: 50px;
+}
+
+.cell {
+  background-color: #94D2BD;
+  border: none;
+  border-radius: 9px;
+}
+
+#reset-btn {
+  width: 150px;
+  height: 32px;
+  font-size: 14px;
+  border: none;
+  background-color: var(--naranjo);
+  color: #fff;
+  border-radius: 7px;
+  margin-top: 40px;
+  margin-bottom: 30px;
+}
+
+#play-again-btn {
+  width: 150px;
+  height: 32px;
+  font-size: 14px;
+  border: none;
+  color: #fff;
+  background-color: var(--verde-sec);
+  border-radius: 7px;
+}
+
+h3 {
+  font-size: 28px;
+  color: #fff;
+}
