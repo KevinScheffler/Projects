@@ -116,7 +116,7 @@ document.getElementById('start-btn').addEventListener('click', () => {
   document.querySelector('.players').style.display = 'none';
   document.querySelector('.start').style.display = 'none';
   gameController.start();
-})
+});
 
 document.querySelectorAll('.cell').forEach(cell => {
   cell.addEventListener('click', gameController.handleClick);
@@ -124,7 +124,7 @@ document.querySelectorAll('.cell').forEach(cell => {
 
 document.getElementById('play-again-btn').addEventListener('click', () => {
   gameController.playAgain();
-})
+});
 
 
 
