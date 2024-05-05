@@ -56,6 +56,10 @@ h1 {
   background-color: #94D2BD;
   border: none;
   border-radius: 9px;
+  font-size: 3rem;
+  line-height: 100px;
+  text-align: center;
+  cursor: pointer;
 }
 
 #reset-btn {
@@ -83,4 +87,8 @@ h1 {
 h3 {
   font-size: 28px;
   color: #fff;
+}
+
+button {
+  cursor: pointer;
 }
