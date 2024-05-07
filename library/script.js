@@ -2,14 +2,18 @@ let myLibrary = [];
 let bookIdCounter = 0;
 let filteredArray = [];
 
-function Book(title, author, pages, haveRead, id) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.haveRead = haveRead;
-  this.id = id;
-  this.readStatus = function() {
-    return haveRead ? 'have read' : 'not read yet';
+
+class Book {
+  constructor(title, author, pages, haveRead, id) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.haveRead = haveRead;
+    this.id = id;
+  }
+
+  readStatus() {
+    return this.haveRead ? 'have read' : 'not read yet';
   }
 }
 
