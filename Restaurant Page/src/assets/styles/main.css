@@ -390,6 +390,7 @@ textarea {
   align-items: center;
   position: relative;
   height: 100%;
+  overflow: clip;
 }
 
 .footer-img {
