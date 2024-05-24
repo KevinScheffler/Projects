@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="shortcut icon" href="./assets/icons/browser-tab.ico" type="image/x-icon">
+  <title>Focuslist</title>
+</head>
+<body>
+  <div id="content">
+    <div class="sidebar-container">
+      <div class="header">
+        <h1 class="logo">Focuslist</h1>
+        <button id="sidebar-dock">
+          <img width="28" height="28" src="./assets/icons/dock-left.svg">
+        </button>
+      </div>
+      <div class="tasks-container">
+        <button id="add-task-sidebar">
+          <img src="assets/icons/plus-icon.svg" width="24" height="24">
+          <span>Add task</span>
+        </button>
+        <dialog id="sidebar-dialog">
+          <form method="dialog">
+            <div class="sb-task-name-container">
+              <input type="text" name="task-name" class="task-name" id="task-name" placeholder="Task name (required)" required>
+            </div>
+            <div class="sb-notes-container">
+              <textarea name="notes" class="notes" id="notes" rows="4" cols="50" placeholder="Notes (optional)"></textarea>
+            </div>
+            <div class="sb-date-container">
+              <input type="date" name="date" id="date">
+            </div>
+            <div class="sb-priority-container">
+              <select name="priority" id="priority">
+                <option value="no-priority" selected>No Priority</option>
+                <option value="high-priority">High Priority</option>
+                <option value="medium-priority">Medium Priority</option>
+                <option value="low-priority">Low Priority</option>
+              </select>
+            </div>
+            <div class="sb-folder-group-container">
+              <select name="folder-group" id="folder-group">
+                <option value="tasks" selected>Tasks</option>
+                <option value="projects">Projects</option>
+              </select>
+            </div>
+            <div class="sidebar-dialog-buttons">
+              <button id="sb-close">Close</button>
+              <button id="sb-add">Add</button>
+            </div>
+          </form>
+        </dialog>
+        <button id="all-tasks-sidebar">
+          <img src="assets/icons/check-list.svg" width="24" height="24">
+          <span>All Tasks</span>
+          <span class="total-tasks">0</span>
+        </button>
+        <button id="todays-tasks-sidebar">
+          <img src="assets/icons/calendar-icon.svg" width="24" height="24">
+          <span>Today</span>
+          <span class="total-tasks">0</span>
+        </button>
+        <button id="overdue-tasks-sidebar">
+          <img src="assets/icons/clock-icon.svg" width="24" height="24">
+          <span>Overdue</span>
+          <span class="total-tasks">0</span>
+        </button>
+      </div>
+      <div class="projects-container">
+        <h3>My Projects</h3>
+        <button id="create-project">+ Create a new project</button>
+      </div>
+    </div>
+    <div class="main">
+      <div class="main-header">
+        <button id="sidebar-dock">
+          <img width="28" height="28" src="./assets/icons/dock-left.svg">
+        </button>
+        <div class="light-dark-toggle">
+          <input type="checkbox" class="checkbox" id="checkbox">
+          <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
+      </div>
+      <div class="main-tasks-container">
+        <h2>All tasks</h2>
+        <button id="main-add-task">+ Add task</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
