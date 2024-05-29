@@ -21,37 +21,27 @@
           <img src="assets/icons/plus-icon.svg" width="24" height="24">
           <span>Add task</span>
         </button>
-        <dialog id="sidebar-dialog">
-          <form method="dialog">
-            <div class="sb-task-name-container">
+        <div id="sidebar-form-container" class="sb-form-hidden">
+          <form id="sb-form">
               <input type="text" name="task-name" class="task-name" id="task-name" placeholder="Task name (required)" required>
-            </div>
-            <div class="sb-notes-container">
               <textarea name="notes" class="notes" id="notes" rows="4" cols="50" placeholder="Notes (optional)"></textarea>
-            </div>
-            <div class="sb-date-container">
               <input type="date" name="date" id="date">
-            </div>
-            <div class="sb-priority-container">
               <select name="priority" id="priority">
                 <option value="no-priority" selected>No Priority</option>
                 <option value="high-priority">High Priority</option>
                 <option value="medium-priority">Medium Priority</option>
                 <option value="low-priority">Low Priority</option>
               </select>
-            </div>
-            <div class="sb-folder-group-container">
               <select name="folder-group" id="folder-group">
                 <option value="tasks" selected>Tasks</option>
                 <option value="projects">Projects</option>
               </select>
-            </div>
-            <div class="sidebar-dialog-buttons">
+            <div class="sidebar-form-buttons">
               <button id="sb-close">Close</button>
               <button id="sb-add">Add</button>
             </div>
           </form>
-        </dialog>
+        </div>
         <button id="all-tasks-sidebar">
           <img src="assets/icons/check-list.svg" width="24" height="24">
           <span>All Tasks</span>
@@ -90,6 +80,31 @@
       <div class="main-tasks-container">
         <h2>All tasks</h2>
         <button id="main-add-task">+ Add task</button>
+      </div>
+      <div id="main-form-container" class="main-form-hidden">
+        <form id="main-form">
+          <div class="main-form-left-side">
+            <input type="text" name="task-name" class="task-name" id="task-name" placeholder="Task name (required)" required>
+            <input type="date" name="date" id="date">
+            <select name="priority" id="priority">
+              <option value="no-priority" selected>No Priority</option>
+              <option value="high-priority">High Priority</option>
+              <option value="medium-priority">Medium Priority</option>
+              <option value="low-priority">Low Priority</option>
+            </select>
+            <select name="folder-group" id="folder-group">
+              <option value="tasks" selected>Tasks</option>
+              <option value="projects">Projects</option>
+            </select>
+          </div>
+            <div class="main-form-right-side">
+              <textarea name="notes" class="notes" id="notes" rows="6" cols="80" placeholder="Notes (optional)"></textarea>
+              <div class="main-form-buttons">
+                <button id="main-close">Close</button>
+                <button id="main-add">Add</button>
+              </div>
+            </div>
+        </form>
       </div>
     </div>
   </div>

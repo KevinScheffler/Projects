@@ -1,15 +1,37 @@
 import './style.css';
 
-const dialog = document.getElementById('sidebar-dialog');
+const sbFormContainer = document.getElementById('sidebar-form-container');
 
-const addTask = document.getElementById('add-task-sidebar');
+const sbAddTask = document.getElementById('add-task-sidebar');
 
-const closeDialog = document.getElementById('sb-close');
+const sbCloseForm = document.getElementById('sb-close');
 
-addTask.onclick = function() {
-  dialog.showModal();
+sbAddTask.onclick = function() {
+  if (sbFormContainer.classList.contains('sb-form-hidden')) {
+    sbFormContainer.classList.remove('sb-form-hidden');
+  } else {
+    sbFormContainer.classList.add('sb-form-hidden');
+  }
 }
 
-closeDialog.onclick = function() {
-  dialog.close();
+sbCloseForm.onclick = function() {
+  sbFormContainer.classList.add('sb-form-hidden');
+}
+
+const mainFormContainer = document.getElementById('main-form-container');
+
+const mainAddTaskBtn = document.getElementById('main-add-task');
+
+const mainFormCloseBtn = document.getElementById('main-close');
+
+mainAddTaskBtn.onclick = function() {
+  if (mainFormContainer.classList.contains('main-form-hidden')) {
+    mainFormContainer.classList.remove('main-form-hidden');
+  } else {
+    mainFormContainer.classList.add('main-form-hidden');
+  }
+}
+
+mainFormCloseBtn.onclick = function() {
+  mainFormContainer.classList.add('main-form-hidden');
 }

@@ -202,13 +202,108 @@ img {
   color: red;
 }
 
-#sidebar-dialog form {
+
+#sidebar-form-container {
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  width: 300px;
+  background-color: transparent;
+  margin-top: -20px;
+}
+
+#sb-form {
   display: flex;
   flex-direction: column;
-  width: 300px;
-  align-items: center;
-  height: 100%;
 }
+
+.sb-form-hidden {
+  display: none;
+}
+
+#sb-form input, textarea, select {
+  width: 100%;
+  margin-top: 5px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.sidebar-form-buttons {
+  display: flex;
+  margin-top: 10px;
+  width: 100%;
+  gap: 9px;
+}
+
+#sb-close {
+  background-color: #E3E3E3;
+  display: inline;
+}
+
+#sb-add {
+  background-color: #FF3D29;
+  display: inline;
+  color: white;
+}
+
+#main-form-container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #F5F5F5;
+  padding: 20px;
+}
+
+.main-form-hidden {
+  display: none;
+}
+
+#main-form  {
+  display: flex;
+  width: 100%;
+  gap: 30px;
+}
+
+#main-form input, select {
+  width: 100%;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#main-form textarea {
+  width: 100%;
+}
+
+.main-form-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+#main-close {
+  background-color: #E3E3E3;
+  display: inline;
+  width: 100%;
+  padding: 15px;
+  border: none;
+  cursor: pointer;
+}
+
+#main-add {
+  background-color: #FF3D29;
+  display: inline;
+  color: white;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+
+
+
+
 
 
 
