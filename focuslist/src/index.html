@@ -23,29 +23,29 @@
         </button>
         <div id="sidebar-form-container" class="sb-form-hidden">
           <form id="sb-form">
-              <input type="text" name="task-name" class="task-name" id="task-name" placeholder="Task name (required)" required>
-              <textarea name="notes" class="notes" id="notes" rows="4" cols="50" placeholder="Notes (optional)"></textarea>
-              <input type="date" name="date" id="date">
-              <select name="priority" id="priority">
+              <input type="text" name="sb-task-name" class="task-name" id="sb-task-name" placeholder="Task name (required)" required>
+              <textarea name="sb-notes" class="notes" id="sb-notes" rows="4" cols="50" placeholder="Notes (optional)"></textarea>
+              <input type="date" name="sb-date" id="sb-date">
+              <select name="sb-priority" id="sb-priority">
                 <option value="no-priority" selected>No Priority</option>
                 <option value="high-priority">High Priority</option>
                 <option value="medium-priority">Medium Priority</option>
                 <option value="low-priority">Low Priority</option>
               </select>
-              <select name="folder-group" id="folder-group">
+              <select name="sb-folder-group" id="sb-folder-group">
                 <option value="tasks" selected>Tasks</option>
                 <option value="projects">Projects</option>
               </select>
             <div class="sidebar-form-buttons">
               <button id="sb-close">Close</button>
-              <button id="sb-add">Add</button>
+              <button type="submit" id="sb-add">Add</button>
             </div>
           </form>
         </div>
         <button id="all-tasks-sidebar">
           <img src="assets/icons/check-list.svg" width="24" height="24">
           <span>All Tasks</span>
-          <span class="total-tasks">0</span>
+          <span id="sb-total-tasks" class="total-tasks">0</span>
         </button>
         <button id="todays-tasks-sidebar">
           <img src="assets/icons/calendar-icon.svg" width="24" height="24">
@@ -78,34 +78,38 @@
         </div>
       </div>
       <div class="main-tasks-container">
-        <h2>All tasks</h2>
+        <h2>
+          All tasks
+          <span id="main-all-tasks">(0)</span>
+        </h2>
         <button id="main-add-task">+ Add task</button>
       </div>
       <div id="main-form-container" class="main-form-hidden">
-        <form id="main-form">
+        <form action="" id="main-form">
           <div class="main-form-left-side">
-            <input type="text" name="task-name" class="task-name" id="task-name" placeholder="Task name (required)" required>
-            <input type="date" name="date" id="date">
-            <select name="priority" id="priority">
+            <input type="text" name="main-task-name" class="task-name" id="main-task-name" placeholder="Task name (required)" required>
+            <input type="date" name="main-date" id="main-date" required>
+            <select name="main-priority" id="main-priority">
               <option value="no-priority" selected>No Priority</option>
               <option value="high-priority">High Priority</option>
               <option value="medium-priority">Medium Priority</option>
               <option value="low-priority">Low Priority</option>
             </select>
-            <select name="folder-group" id="folder-group">
-              <option value="tasks" selected>Tasks</option>
-              <option value="projects">Projects</option>
+            <select name="main-folder-group" id="main-folder-group">
+              <option value="main-tasks" selected>Tasks</option>
+              <option value="main-projects">Projects</option>
             </select>
           </div>
             <div class="main-form-right-side">
-              <textarea name="notes" class="notes" id="notes" rows="6" cols="80" placeholder="Notes (optional)"></textarea>
+              <textarea name="main-notes" class="notes" id="main-notes" rows="6" cols="80" placeholder="Notes (optional)"></textarea>
               <div class="main-form-buttons">
-                <button id="main-close">Close</button>
-                <button id="main-add">Add</button>
+                <button type="button" id="main-close">Close</button>
+                <button tyoe="submit" id="main-add">Add</button>
               </div>
             </div>
         </form>
       </div>
+      <div class="task-list-container"></div>
     </div>
   </div>
 </body>

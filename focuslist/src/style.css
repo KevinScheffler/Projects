@@ -177,13 +177,13 @@ img {
 .main-tasks-container {
   display: flex;
   justify-content: space-between;
-  padding: 0 100px;
+  /* padding: 0 100px; */
   margin-top: 50px;
   border-bottom: 1px solid lightgrey;
   padding-bottom: 10px;
 }
 
-.main-tasks-container h2 {
+.main-tasks-container h2, #main-all-tasks {
   font-size: 1.7rem;
   font-family: "Montserrat";
   color: #27272a;
@@ -300,6 +300,63 @@ img {
   border: none;
   cursor: pointer;
 }
+
+.task-ul {
+  border-bottom: 1px solid lightgrey;
+  padding-bottom: 10px;
+}
+
+.task-li {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+
+.priority-btn-container button {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: lightgrey;
+}
+
+.priority-btn-container button:hover {
+  background-image: url('./assets/icons/check.svg');
+  background-position: center center;
+  background-size: 15px 15px;
+}
+
+.task-item-data {
+  display: inline-block;
+  font-size: 1rem;
+}
+
+.task-date {
+  color: red;
+  margin-top: 30px;
+  position: relative;
+  font-size: 0.9rem;
+  margin-left: 15px;
+}
+
+.task-date::before {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: -20px;
+  width: 100%;
+  height: 100%;
+  background-image: url('./assets/icons/task-list-calendar.png');
+  background-position: left-center;
+  background-repeat: no-repeat;
+  background-size: 15px 15px;
+}
+
+
+
+
 
 
 
