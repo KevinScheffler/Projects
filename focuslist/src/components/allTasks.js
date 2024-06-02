@@ -1,6 +1,11 @@
+import { format, isToday } from "date-fns";
+
 function allTasks(taskArr) {
   const taskListContainer = document.querySelector('.task-list-container');
   taskListContainer.innerHTML = '';
+
+  const mainHeaderH2 = document.querySelector('.main-header-h2');
+  mainHeaderH2.textContent = 'All tasks';
 
   taskArr.forEach(task => {
     const taskUL = document.createElement('ul');
@@ -24,9 +29,12 @@ function allTasks(taskArr) {
 
     priorityBtn.addEventListener('click', () => {
       taskUL.remove();
-      taskArr = taskArr.filter(item => item.id !== task.id);
-      const allTasks = document.getElementById('main-all-tasks');
-      allTasks.textContent = '(' + taskArr.length + ')';
+      taskArr = taskArr.filter(item => item.id !== task.id );
+      const mainAllTasks = document.getElementById('main-all-tasks');
+      mainAllTasks.textContent = '(' + taskArr.length + ')';
+
+      const sbTotalTasks = document.getElementById('sb-total-tasks');
+      sbTotalTasks.textContent = taskArr.length;
     });
 
     const taskItemData = document.createElement('div');

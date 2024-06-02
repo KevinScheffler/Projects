@@ -38,6 +38,11 @@ const TaskManager = (() => {
     return myTasks;
   }
 
+  function getTodaysTasks() {
+    const todaysTasks = myTasks.filter(task => isToday(task.date));
+    return todaysTasks;
+  }
+
   function getTaskIdCounter() {
     return taskIdCounter;
   }
@@ -46,6 +51,7 @@ const TaskManager = (() => {
     Task,
     addTask,
     getTasks,
+    getTodaysTasks,
     getTaskIdCounter,
   };
 })();
