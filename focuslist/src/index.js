@@ -1,13 +1,12 @@
 import "./style.css";
 import TaskManager from "./components/taskManager";
 import allTasks from "./components/allTasks";
-import { format, isToday } from "date-fns";
+import { format, isToday, isBefore, isPast, isFuture, isYesterday } from "date-fns";
 import todaysTasks from "./components/todaysTasks";
+import overdueTasks from "./components/overdueTasks";
 
 document.addEventListener("DOMContentLoaded", () => {
   const mainFormContainer = document.getElementById("main-form-container");
-
-  const mainAllTasks = document.getElementById('main-all-tasks');
 
   function toggleMainForm() {
     if (mainFormContainer.classList.contains("main-form-hidden")) {
@@ -19,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   document.getElementById("main-add-task").addEventListener("click", () => {
     toggleMainForm();
-    formatDisplayDate();
+    // formatDisplayDate();
   });
 
   document.getElementById("main-close").addEventListener("click", () => {
@@ -61,26 +60,28 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     TaskManager.addTask(task);
     const tasks = TaskManager.getTasks();
-    mainAllTasks.textContent = TaskManager.getTaskIdCounter();
-    allTasks(tasks);
-
     const today = TaskManager.getTodaysTasks();
-    
+    const overdue = TaskManager.getOverdueTasks();
+
     tasks.forEach(task => {
       if (isToday(task.date)) {
         todaysTasks(today);
+      } else if (isPast(task.date)) {
+        overdueTasks(overdue);
       } else {
         allTasks(tasks);
       }
     })
+   
     
-
-    const sbAllTaskTotal = document.getElementById("sb-total-tasks");
+    const sbAllTaskTotal = document.getElementById('sb-total-tasks');
     sbAllTaskTotal.textContent = TaskManager.getTasks().length;
 
-    const sbTodaysTasksTotal = document.getElementById("sb-todays-tasks");
+    const sbTodaysTasksTotal = document.getElementById('sb-todays-tasks');
+    sbTodaysTasksTotal.textContent = TaskManager.getTodaysTasks().length;
 
-    sbTodaysTasksTotal.textContent = today.length;
+    const sbOverdueTasksTotal = document.getElementById('sb-overdue-tasks');
+    sbOverdueTasksTotal.textContent = TaskManager.getOverdueTasks().length;
 
     document.getElementById("main-form").reset();
     toggleMainForm();
@@ -144,11 +145,6 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(tasks);
     allTasks(tasks);
 
-    mainAllTasks.textContent = '(' + tasks.length + ')';
-
-    const sbAllTaskTotal = document.getElementById("sb-total-tasks");
-    sbAllTaskTotal.textContent = TaskManager.getTaskIdCounter();
-
     document.getElementById("sb-form").reset();
     toggleSidebarForm();
   });
@@ -166,4 +162,14 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       todaysTasks(TaskManager.getTodaysTasks());
     });
+
+    document
+    .getElementById("overdue-tasks-sidebar")
+    .addEventListener("click", (e) => {
+      e.preventDefault();
+      overdueTasks(TaskManager.getOverdueTasks());
+    });
+
+    allTasks(TaskManager.getTasks());
 });
+

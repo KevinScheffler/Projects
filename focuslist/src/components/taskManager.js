@@ -1,7 +1,9 @@
-import { format, isToday, isYesterday, isTomorrow, parseISO } from "date-fns";
+import { format, isToday, isYesterday, isTomorrow, isPast, parseISO } from "date-fns";
 
 const TaskManager = (() => {
   let myTasks = [];
+  let todaysTasks = [];
+  let overdueTasks = [];
   let taskIdCounter = 0;
 
   function Task(taskName, date, priority, project, notes, id) {
@@ -34,13 +36,41 @@ const TaskManager = (() => {
     taskIdCounter++;
   }
 
+  function deleteTask(taskId) {
+   for (let i = 0; i < myTasks.length; i++) {
+    for (let j = 0; j < todaysTasks.length; j++) {
+      if (myTasks[i].id === taskId || todaysTasks[j].id === taskId) {
+        myTasks.splice(i, 1);
+        todaysTasks.splice(j, 1);
+        i--;
+        j--;
+      }
+    }
+   }
+   for (let i = 0; i < myTasks.length; i++) {
+    for (let j = 0; j < overdueTasks.length; j++) {
+      if (myTasks[i].id === taskId || overdueTasks[i].id === taskId) {
+        myTasks.splice(i, 1);
+        overdueTasks.splice(j, 1);
+        i--;
+        j--;
+      }
+    }
+   }
+  }
+
   function getTasks() {
     return myTasks;
   }
 
   function getTodaysTasks() {
-    const todaysTasks = myTasks.filter(task => isToday(task.date));
+    todaysTasks = myTasks.filter(task => isToday(task.date));
     return todaysTasks;
+  }
+
+  function getOverdueTasks() {
+    overdueTasks = myTasks.filter(task => isPast(task.date) && !(isToday(task.date)));
+    return overdueTasks;
   }
 
   function getTaskIdCounter() {
@@ -51,7 +81,9 @@ const TaskManager = (() => {
     Task,
     addTask,
     getTasks,
+    deleteTask,
     getTodaysTasks,
+    getOverdueTasks,
     getTaskIdCounter,
   };
 })();

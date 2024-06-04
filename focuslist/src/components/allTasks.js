@@ -1,4 +1,4 @@
-import { format, isToday } from "date-fns";
+import TaskManager from "./taskManager";
 
 function allTasks(taskArr) {
   const taskListContainer = document.querySelector('.task-list-container');
@@ -6,6 +6,11 @@ function allTasks(taskArr) {
 
   const mainHeaderH2 = document.querySelector('.main-header-h2');
   mainHeaderH2.textContent = 'All tasks';
+
+  const spanTaskTotal = document.createElement('span');
+  spanTaskTotal.classList.add('main-task-total');
+  spanTaskTotal.textContent = ` (${TaskManager.getTasks().length})`;
+  mainHeaderH2.appendChild(spanTaskTotal);
 
   taskArr.forEach(task => {
     const taskUL = document.createElement('ul');
@@ -29,12 +34,19 @@ function allTasks(taskArr) {
 
     priorityBtn.addEventListener('click', () => {
       taskUL.remove();
-      taskArr = taskArr.filter(item => item.id !== task.id );
-      const mainAllTasks = document.getElementById('main-all-tasks');
-      mainAllTasks.textContent = '(' + taskArr.length + ')';
+      taskArr = taskArr.splice(task.id, 1);
+      TaskManager.deleteTask(task.id);
+      const mainTaskTotal = document.querySelector('.main-task-total');
+      mainTaskTotal.textContent = `(${TaskManager.getTasks().length})`;
 
       const sbTotalTasks = document.getElementById('sb-total-tasks');
-      sbTotalTasks.textContent = taskArr.length;
+      sbTotalTasks.textContent = TaskManager.getTasks().length;
+
+      const sbTodaysTasks = document.getElementById('sb-todays-tasks');
+      sbTodaysTasks.textContent = TaskManager.getTodaysTasks().length;
+
+      const sbOverdueTasks = document.getElementById('sb-overdue-tasks');
+      sbOverdueTasks.textContent = TaskManager.getOverdueTasks().length;
     });
 
     const taskItemData = document.createElement('div');

@@ -183,7 +183,7 @@ img {
   padding-bottom: 10px;
 }
 
-.main-tasks-container h2, #main-all-tasks {
+.main-tasks-container h2, .main-task-total {
   font-size: 1.7rem;
   font-family: "Montserrat";
   color: #27272a;
