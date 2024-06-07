@@ -4,6 +4,7 @@ import allTasks from "./components/allTasks";
 import { format, isToday, isBefore, isPast, isFuture, isYesterday } from "date-fns";
 import todaysTasks from "./components/todaysTasks";
 import overdueTasks from "./components/overdueTasks";
+import { v4 as uuidv4 } from 'uuid';
 
 document.addEventListener("DOMContentLoaded", () => {
   const mainFormContainer = document.getElementById("main-form-container");
@@ -48,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const priority = document.getElementById("main-priority").value;
     const project = document.getElementById("main-folder-group").value;
     const notes = document.getElementById("main-notes").value;
-    const id = TaskManager.getTaskIdCounter();
+    const id = uuidv4();
 
     const task = new TaskManager.Task(
       taskName,
@@ -72,6 +73,10 @@ document.addEventListener("DOMContentLoaded", () => {
         allTasks(tasks);
       }
     })
+
+    console.log('MyTasks:', tasks);
+    console.log('TodaysTasks:', today);
+    console.log('overdueTasks:', overdue);
    
     
     const sbAllTaskTotal = document.getElementById('sb-total-tasks');

@@ -34,15 +34,16 @@ function todaysTasks(taskArr) {
 
       priorityBtn.addEventListener("click", () => {
         taskUL.remove();
-        TaskManager.deleteTask(task.id);
+        TaskManager.deleteTodaysTask(task.id);
         const mainTaskTotal = document.querySelector(".main-task-total");
         mainTaskTotal.textContent = `(${TaskManager.getTodaysTasks().length})`;
 
         const sbTodaysTasks = document.getElementById("sb-todays-tasks");
         sbTodaysTasks.textContent = TaskManager.getTodaysTasks().length;
 
-        const sbTotalTasks = document.getElementById("sb-total-tasks");
+        const sbTotalTasks = document.getElementById('sb-total-tasks');
         sbTotalTasks.textContent = TaskManager.getTasks().length;
+
       });
 
       const taskItemData = document.createElement("div");

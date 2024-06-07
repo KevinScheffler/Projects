@@ -34,8 +34,9 @@ function allTasks(taskArr) {
 
     priorityBtn.addEventListener('click', () => {
       taskUL.remove();
+      TaskManager.deleteTodaysTask(task.id);
+      TaskManager.deleteOverdueTask(task.id);
       taskArr = taskArr.splice(task.id, 1);
-      TaskManager.deleteTask(task.id);
       const mainTaskTotal = document.querySelector('.main-task-total');
       mainTaskTotal.textContent = `(${TaskManager.getTasks().length})`;
 

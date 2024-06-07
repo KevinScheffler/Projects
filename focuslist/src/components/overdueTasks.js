@@ -34,15 +34,16 @@ function overdueTasks(taskArr) {
 
       priorityBtn.addEventListener("click", () => {
         taskUL.remove();
-        TaskManager.deleteTask(task.id);
+        TaskManager.deleteOverdueTask(task.id);
         const mainTaskTotal = document.querySelector(".main-task-total");
         mainTaskTotal.textContent = ` (${TaskManager.getOverdueTasks().length})`;
 
         const sbOverdueTasks = document.getElementById("sb-overdue-tasks");
         sbOverdueTasks.textContent = TaskManager.getOverdueTasks().length;
 
-        const sbTotalTasks = document.getElementById("sb-total-tasks");
+        const sbTotalTasks = document.getElementById('sb-total-tasks');
         sbTotalTasks.textContent = TaskManager.getTasks().length;
+
       });
 
       const taskItemData = document.createElement("div");

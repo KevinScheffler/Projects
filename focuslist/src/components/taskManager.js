@@ -36,27 +36,31 @@ const TaskManager = (() => {
     taskIdCounter++;
   }
 
-  function deleteTask(taskId) {
-   for (let i = 0; i < myTasks.length; i++) {
-    for (let j = 0; j < todaysTasks.length; j++) {
-      if (myTasks[i].id === taskId || todaysTasks[j].id === taskId) {
-        myTasks.splice(i, 1);
-        todaysTasks.splice(j, 1);
-        i--;
-        j--;
+
+  function deleteTodaysTask(taskId) {
+    for (let i = 0; i < myTasks.length; i++) {
+      for (let j = 0; j < todaysTasks.length; j++) {
+        if (myTasks[i].id === taskId && todaysTasks[j].id === taskId) {
+          myTasks.splice(i, 1);
+          todaysTasks.splice(j, 1);
+          i--;
+          j--;
+        } 
       }
     }
-   }
-   for (let i = 0; i < myTasks.length; i++) {
-    for (let j = 0; j < overdueTasks.length; j++) {
-      if (myTasks[i].id === taskId || overdueTasks[i].id === taskId) {
-        myTasks.splice(i, 1);
-        overdueTasks.splice(j, 1);
-        i--;
-        j--;
+  }
+
+  function deleteOverdueTask(taskId) {
+    for (let i = 0; i < myTasks.length; i++) {
+      for (let j = 0; j < overdueTasks.length; j++) {
+        if (myTasks[i].id === taskId && overdueTasks[i].id === taskId) {
+          myTasks.splice(i, 1);
+          overdueTasks.splice(j, 1);
+          i--;
+          j--;
+        } 
       }
     }
-   }
   }
 
   function getTasks() {
@@ -80,8 +84,9 @@ const TaskManager = (() => {
   return {
     Task,
     addTask,
+    deleteTodaysTask,
+    deleteOverdueTask,
     getTasks,
-    deleteTask,
     getTodaysTasks,
     getOverdueTasks,
     getTaskIdCounter,
