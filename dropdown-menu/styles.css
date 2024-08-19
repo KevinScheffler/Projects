@@ -1,0 +1,71 @@
+body {
+  width: 100%;
+  background-color: #0c0b26;
+  height: 100vh;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.text-container {
+  max-width: 50%;
+  margin-top: 20rem;
+  color: #ffffff;
+}
+
+.title-text {
+  font-size: 4rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  letter-spacing: 0.6rem;
+}
+
+.title-text div:first-child {
+  color: red;
+  margin-bottom: 2rem;
+}
+
+.dropdown-container {
+  max-width: 50%;
+  margin-top: 10rem;
+}
+
+#drop-btn {
+  color: #ffffff;
+  font-size: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  margin-left: 7rem;
+  margin-bottom: 1.5rem;
+}
+
+#drop-btn:hover {
+  color: #ffb23d;
+}
+
+#dropdown {
+  width: 400px;
+  padding: 1rem;
+  border-radius: 0.7rem;
+  font-size: 1rem;
+}
+
+.hidden {
+  display: none;
+}
+
+
+
+
+@media only screen and (max-width: 550px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
