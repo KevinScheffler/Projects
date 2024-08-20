@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Image Carousel</title>
+</head>
+<body>
+  <div class="container">
+    <div class="arrows-container">
+      <button type="button" id="previousBtn" class="previous arrow">
+          <img src="icons/previous.png">
+      </button>
+      <button type="button" id="nextBtn" class="next arrow">
+          <img src="icons/next.png">
+      </button>
+    </div>
+
+    <div class="carousel-slide">
+      <img id="image" class="img" src="images/beach.jpg">
+    </div>
+    <ul class="dots">
+      <li class="dot active" data-index="0"></li>
+      <li class="dot" data-index="1"></li>
+      <li class="dot" data-index="2"></li>
+      <li class="dot" data-index="3"></li>
+      <li class="dot" data-index="4"></li>
+    </ul>
+    <div class="form">
+      <input type="checkbox" name="auto-slide" id="auto-slide">
+      <label for="auto-slide">Auto Slide</label>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
