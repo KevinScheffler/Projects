@@ -96,4 +96,9 @@ input[type="text"] {
   margin-right: 15px;
 }
 
+.error {
+  text-align: center;
+  color: red;
+}
+
 
