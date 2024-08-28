@@ -74,6 +74,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     })
 
+    
+
     console.log('MyTasks:', tasks);
     console.log('TodaysTasks:', today);
     console.log('overdueTasks:', overdue);

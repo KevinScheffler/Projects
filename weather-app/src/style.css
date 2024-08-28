@@ -1,0 +1,220 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+body {
+  background-image: linear-gradient( 111.4deg,  rgba(7,7,9,1) 6.5%, rgba(27,24,113,1) 93.2% );
+  font-family: 'Poppins', Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 100vw;
+}
+
+.container {
+  max-width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: 100px;
+  line-height: 100px;
+  vertical-align: middle;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.logo {
+  color: #ffb23d;
+  font-size: 40px;
+  white-space: nowrap;
+}
+#search-form {
+  position: relative;
+  width: fit-content;
+}
+
+#search-bar {
+  width: 40rem;
+  height: 2.5rem;
+  border-radius: 20px;
+  font-family: monospace;
+  border: 1px solid #dadada;
+  outline: none;
+  background-color: #f3f7fe;
+  transition: 0.3s;
+  color: #3b82f6;
+  font-size: 1rem;
+}
+
+#search-bar:focus {
+  border: 1px solid #3b82f6;
+  box-shadow: 0 0 0 4px #3b83f65f;
+}
+
+.search-button {
+  position: absolute;
+  right: 1rem;
+  top: 0;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 30px;
+  background: transparent;
+}
+
+/* toggle button */
+.checkbox {
+  width: 150px;
+  height: 40px;
+  background-color: #f3f7fe;
+  border: 1px solid #dadada;
+  border-radius: 20px;
+  position: relative;
+  color: black;
+  overflow: hidden;
+}
+
+#checkbox_toggle {
+  display: none;
+}
+
+.checkbox .toggle {
+  width: 70px;
+  height: 30px;
+  position: absolute;
+  border-radius: 15px;
+  left: 5px;
+  cursor: pointer;
+  background: linear-gradient(40deg, #8983f7, #a3dafb 70%);
+  transition: 0.4s;
+  box-shadow: -0px -0px 10px #8983f7, -0px -0px 3px #8983f7;
+}
+
+.checkbox .slide {
+  width: 155px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.checkbox .slide .text {
+  font-size: 14px; /* Reduced font size */
+  font-weight: 700;
+  z-index: 100;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+
+.check:checked + .checkbox .slide .toggle {
+  transform: translateX(73px);
+  background: linear-gradient(40deg, #ff0080, #ff8c00 70%);
+  box-shadow: 0px 0px 3px rgb(255, 255, 20), 0px 0px 5px rgb(255, 255, 20);
+  margin-left: -0.5rem;
+}
+
+.content-container {
+  width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.location {
+  color: #ffb23d;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-left: 100px;
+  font-family: 'Roboto';
+  font-weight: 100;
+  font-style: normal;
+  line-height: 1.6;
+  letter-spacing: 2px;
+}
+
+.fa-solid.fa-location-dot {
+  font-size: 32px;
+}
+
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.active {
+  display: none;
+}
+
+.todays-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f3f7fe;
+  border: 1px solid #dadada;
+  border-radius: 18px;
+  width: 275px;
+  height: 320px;
+}
+
+.card-date-time {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.todays-card img {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.todays-card  h1 {
+  text-align: center;
+}
+
+.todays-card  h2 {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.next-day-cards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 18px;
+  width: 180px;
+  height: 320px;
+  background-color: #f3f7fe;
+  border: 1px solid #dadada;
+  border-radius: 18px;
+}
+
+.next-day-cards h3 {
+  text-align: center;
+}
+
+.next-day-cards img {
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-day-cards h1 {
+  font-size: 1.2rem;
+}
