@@ -60,10 +60,14 @@ function currentWeatherCard() {
   time.textContent = currentTime;
   dateAndTime.appendChild(time);
 
+  const tdIconContainer = document.createElement('div');
+  tdIconContainer.classList.add('td-icon-container');
+  todaysCard.appendChild(tdIconContainer)
+
   const img = document.createElement('img');
   const icon = getIcon(updatedWeatherData.currentConditions.icon);
   img.src = icon;
-  todaysCard.appendChild(img);
+  tdIconContainer.appendChild(img);
 
   const temp = document.createElement('h1');
   temp.textContent = updatedWeatherData.currentConditions.temp + unitText;
@@ -89,10 +93,14 @@ function futureWeatherCards() {
     day.textContent = days[i];
     nextDayCard.appendChild(day);
 
+    const iconContainer = document.createElement('div');
+    iconContainer.classList.add('icon-container');
+    nextDayCard.appendChild(iconContainer);
+
     const img = document.createElement('img');
     const icon = getIcon(updatedWeatherData.days[i].icon);
     img.src = icon;
-    nextDayCard.appendChild(img);
+    iconContainer.appendChild(img);
 
     const temp = document.createElement('h1');
     temp.textContent = updatedWeatherData.days[i].temp + unitText;

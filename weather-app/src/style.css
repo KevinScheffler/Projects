@@ -173,12 +173,18 @@ body {
   gap: 50px;
 }
 
+.td-icon-container {
+  position: relative;
+  margin-top: 50px;
+}
+
 .todays-card img {
   width: 120px;
   height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translateX(-50%)translateY(-50%);
 }
 
 .todays-card  h1 {
@@ -207,12 +213,21 @@ body {
   text-align: center;
 }
 
+.icon-container {
+  position: relative;
+  padding: 4rem;
+  margin: 0 auto;
+}
+
 .next-day-cards img {
   width: 120px;
   height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translateX(-50%)translateY(-50%);
+  
 }
 
 .next-day-cards h1 {
