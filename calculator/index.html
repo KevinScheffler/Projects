@@ -1,21 +1,43 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Calculator</title>
-</head>
-<body>
-  <div class="container">
-    <div class="calculator-container">
-      <div class="output">0</div>
-      <div class="buttons">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="display-container">
+        <div class="output-display">0</div>
+      </div>
+      <div class="clear-delete-container">
+        <button class="clear" id="clear-btn">CLEAR</button>
+        <button class="delete" id="delete-btn">DELETE</button>
+      </div>
+      <div class="buttons-container">
+        <div class="btn" data-number>7</div>
+        <div class="btn" data-number>8</div>
+        <div class="btn" data-number>9</div>
+        <div class="btn" data-operator>÷</div>
 
+        <div class="btn" data-number="">4</div>
+        <div class="btn" data-number="">5</div>
+        <div class="btn" data-number="">6</div>
+        <div class="btn" data-operator>×</div>
+
+        <div class="btn" data-number="">1</div>
+        <div class="btn" data-number="">2</div>
+        <div class="btn" data-number="">3</div>
+        <div class="btn" data-operator>-</div>
+
+        <div class="btn" id="decimal-btn">.</div>
+        <div class="btn" data-number="">0</div>
+        <div class="btn" id="equals-btn">=</div>
+        <div class="btn" data-operator="">+</div>
       </div>
     </div>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
