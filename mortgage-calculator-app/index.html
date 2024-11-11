@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Mortgage Calculator</title>
+</head>
+<body>
+  <div class="container">
+    <div class="main-content">
+      <h1 class="heading">Mortgage Calculator</h1>
+    </div>
+    <div class="top-content">
+      <div class="slider-group">
+        <label for="purchasePrice">Purchase price: $<span id="purchasePriceDisplay">450,000</span></label>
+        <input type="range" id="purchasePrice" min="50000" max="5000000" step="5000" value="450000">
+      </div>
+
+      <div class="slider-group">
+        <label for="downPayment">Down payment: $<span id="downPaymentDisplay">135,000</span></label>
+        <input type="range" id="downPayment" min="50000" max="5000000" step="5000" value="135000">
+      </div>
+
+      <div class="slider-group">
+        <label for="repaymentTime">Repayment time: <span id="repaymentTimeDisplay">25 Years</span></label>
+        <input type="range" id="repaymentTime" min="5" max="30" step="1" value="25">
+      </div>
+    </div>
+
+    <div class="bottom-content">
+      <div class="slider-group">
+        <label for="interestRate">Interest rate: <span id="interestRateDisplay">3%</span></label>
+        <input type="range" id="interestRate" min="0.5" max="10" step="0.5" value="3">
+      </div>
+
+      <div class="slider-group output">
+        <h3>Loan amount:</h3>
+        <div><span id="loanAmount">$315,000</span></div>
+      </div>
+
+      <div class="slider-group output">
+        <h3>Estimated per month:</h3>
+        <div><span id="monthlyPayment">$1,300</span></div>
+      </div>
+    </div>
+    <button>
+      Get a mortgage quote
+    </button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
