@@ -1,3 +1,4 @@
 node_modules/
 dist/
 .DS_Store
+weather-app/src/components/config.js
